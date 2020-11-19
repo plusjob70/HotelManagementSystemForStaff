@@ -25,14 +25,19 @@
 
         $rows = $db->query("SELECT * FROM staff_info");
         $result = $rows->fetchAll();
-        
-        for($i = 0; $i < count($result); $i++){
-            if($result[$i]["id"] == $id){
-                print "<script language=javascript> alert('해당 아이디는 이미 가입되어 있습니다.'); location.replace('signUp.php'); </script>";
-                exit;
-            }
-        }
 
+        if($id != null){
+            for($i = 0; $i < count($result); $i++){
+                if($result[$i]["id"] == $id){
+                    print "<script language=javascript> alert('해당 아이디는 이미 가입되어 있습니다.'); location.replace('signUp.php'); </script>";
+                    exit;
+                }
+            }
+        }else{
+            print "<script language=javascript> alert('내용을 입력해주세요.'); location.replace('signUp.php'); </script>";
+            exit;
+        }
+        
         $str = "INSERT INTO staff_info (id, pw, sname, phone, department, attendance) 
                 VALUE ($q_id, $q_password, $q_name, $q_phone, $q_department, $q_attendance)";
         $db->exec($str);
