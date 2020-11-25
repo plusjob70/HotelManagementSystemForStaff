@@ -1,8 +1,6 @@
 <?php
     try{
         include 'basic.php';
-        session_start();
-        $db = connectDB();
 
         $code = $_POST['code'];
         $id = $_POST['id'];
@@ -34,7 +32,7 @@
         $db->exec($str3);
         $db->exec($str4);
 
-        print "<script language=javascript> alert('체크아웃 되었습니다.'); location.replace('receptionistMain.php'); </script>";
+        print "<script language=javascript> alert('체크아웃 되었습니다.'); history.back(); </script>";
         exit;
 
     } catch (PDOException $ex) {

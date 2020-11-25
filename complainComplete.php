@@ -1,8 +1,5 @@
 <?php 
     include 'basic.php';
-    session_start();
-
-    $db =  connectDB();
 
     $code = $_POST['recept'];
     $rnumber = $_POST['rnumber'];
@@ -19,6 +16,6 @@
     $db->exec($str);
     $db->exec($str2);
 
-    print "<script language=javascript> alert('불만사항이 해결되었습니다.'); location.replace('roomKeeperMain.php'); </script>";
+    print "<script language=javascript> alert('불만사항이 해결되었습니다.'); history.back(); </script>";
     exit;
 ?>

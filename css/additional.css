@@ -1,0 +1,57 @@
+#test_btn1 { 
+    width: 30px;
+    margin-right:-2px;
+} 
+
+#test_btn2 { 
+    width: 30px;
+    margin-left:-2px; 
+} 
+
+#btn_group input[type="button"] {
+    border: 1px solid #2493e0; 
+    background-color: rgba(0,0,0,0); 
+    color: #2493e0; padding: 5px; 
+    margin-top: 8px;
+} 
+
+#btn_group input[type="button"]:hover { 
+    color:white; 
+    background-color: #2493e0; 
+}
+
+.form_colum2 {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #2493e0;
+    border-color: #2493e0;
+    align-items: center;
+}
+
+#rooms_num {
+    color: #2493e0;
+    text-align: center;
+    border: none;
+    width: 30px;
+    height: 33px;
+}
+
+#guest_num {
+    color: #2493e0;
+    text-align: center;
+    border: none;
+    width: 30px;
+    height: 33px;
+}
+
+.rooms_text {
+    margin-left: 18px;
+    margin-right: 20px;
+    color: #2493e0;
+}
+
+.guest_text {
+    margin-left: 18px;
+    margin-right: 5px;
+    color: #2493e0;
+}
