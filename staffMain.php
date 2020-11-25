@@ -1,11 +1,28 @@
-<!doctype html>
-<html lang="en">
-<?php
-include 'basic.php';
+<!DOCTYPE html>
+<?php session_start() ?>
+<!--html lang="en">
 
-$stmt = $db->query("SELECT * FROM staff WHERE accept = 0");
-$result = $stmt->fetchAll();
-?>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MainPage</title>
+
+</head>
+
+<body>
+
+    <form action="login.php" method="POST">
+        <input type="text" id ="id" name="ID">
+        <input type="PASSWORD" id = "pw" name="PW">
+        <button id = "login"> 로그인 </button>        
+    </form>
+
+    <a href="signUp.php">회원가입 페이지 이동</a>
+</body>
+</html-->
+
+<html lang="en">
 
 <head>
     <!-- Required meta tags -->
@@ -34,6 +51,8 @@ $result = $stmt->fetchAll();
     <link rel="stylesheet" href="css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -75,13 +94,11 @@ $result = $stmt->fetchAll();
                             <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="masterT1.php">직원 가입요청</a>
+                                    	<a class="nav-link" href="masterT1.php"></a>
                                     </li>
                                 </ul>
                             </div>
                             <!-- Start 로그아웃 기능 -->
-                            <p style="color:navy;"> <?= $staff_name ?> 님&nbsp;</p>
-                            <a href="logout.php" class="genric-btn primary">로그아웃</a>
                             <!-- End 로그아웃 기능 -->
                         </nav>
                     </div>
@@ -92,39 +109,26 @@ $result = $stmt->fetchAll();
     <!-- Header part end-->
 
 
-    <!-- Start 직원 회원가입 승인 -->
-    <div class="section-top-border">
-        <h3 class="mb-30">요청된 직원가입</h3>
-        <div class="progress-table-wrap">
-            <div class="progress-table">
-                <div class="table-head">
-                    <div class="serial">아이디</div>
-                    <div class="serial">이름</div>
-                    <div class="serial">전화번호</div>
-                    <div class="serial">부서</div>
-                    <div class="serial">승인</div>
-                    <div class="serial">거부</div>
-                </div>
-                <?php for ($i = 0; $i < count($result); $i++) { ?>
-                    <div class="table-row">
-                        <div class="serial"><?= $result[$i]['id'] ?></div>
-                        <div class="serial"><?= $result[$i]['sname'] ?></div>
-                        <div class="serial"><?= $result[$i]['phone'] ?></div>
-                        <div class="serial"><?= $result[$i]['department'] ?></div>
-                        <form action='confirmSignUp.php' method='POST'>
-                            <input type = 'hidden' name='staff_id' value='<?= $result[$i]["id"] ?>'></input>
-                            <button class="genric-btn info circle progress-bar" type='submit' name='staffSignUp' value='t'>확인</button>
-                        </form>
-                        <form action='confirmSignUp.php' method='POST'>
-                            <input type = 'hidden' name='staff_id' value='<?= $result[$i]["id"] ?>'></input>
-                            <button class="genric-btn danger circle" type='submit' name='staffSignUp' value='f'>확인</button>
-                        </form>
-                    </div>
-                <?php } ?>
-            </div>
+
+    <section class="about_us section_padding">
+        <div class="container">
+            <form target="_blank"
+                action="login.php"
+                method="POST" class="form-inline">
+                <input class="form-control" type ="text" id = "id" name="ID" placeholder="ID"
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'ID '"
+                	required="">
+                <h3>&nbsp;</h3>
+                <input class="form-control" type="PASSWORD" id = "pw" name="PW" placeholder="password"
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password '"
+                    required="">
+                <h3>&nbsp;</h3>
+                <button id = "login" class="genric-btn success medium">login </button>
+                <div class="info"></div>
+            </form>
+            <p>Don't have an account?&nbsp;<a href="signUp.php">Sign up</a>
         </div>
-    </div>
-    <!-- End 직원 회원가입 승인 -->
+    </section>
 
     <!-- footer part start-->
     <footer class="footer-area">
@@ -154,12 +158,17 @@ $result = $stmt->fetchAll();
                     <div class="single-footer-widget">
                         <h4>Subscribe Newsletter</h4>
                         <div class="form-wrap" id="mc_embed_signup">
-                            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-                                <input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '" required="" type="email">
+                            <form target="_blank"
+                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                method="get" class="form-inline">
+                                <input class="form-control" name="EMAIL" placeholder="Your Email Address"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
+                                    required="" type="email">
                                 <button class="click-btn btn btn-default text-uppercase"> <i class="far fa-paper-plane"></i>
                                 </button>
                                 <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
+                                        type="text">
                                 </div>
 
                                 <div class="info"></div>
@@ -171,8 +180,9 @@ $result = $stmt->fetchAll();
                 <div class="col-sm-6 col-md-3">
                     <div class="single-footer-widget footer_icon">
                         <h4>Contact Us</h4>
-                        <p>South Korea +82 010 1234 5678</p>
-                        <span>contact@.com</span>
+                        <p>4156, New garden, New York, USA
+                                +880 362 352 783</p>
+                        <span>contact@martine.com</span>
                         <div class="social-icons">
                             <a href="#"><i class="ti-facebook"></i></a>
                             <a href="#"><i class="ti-twitter-alt"></i></a>
@@ -187,13 +197,9 @@ $result = $stmt->fetchAll();
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="copyright_part_text text-center">
-                        <p class="footer-text m-0">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>
-                                document.write(new Date().getFullYear());
-                            </script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
+                        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
             </div>
@@ -224,6 +230,9 @@ $result = $stmt->fetchAll();
     <script src="js/contact.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
+
+    <script src="js/sign.js"></script>
+    
 </body>
 
 </html>
