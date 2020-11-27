@@ -90,88 +90,78 @@
 
 
     <div class="section-top-border" style="padding-left:80px;">
-    <div class="row">
-        <div class="col-lg-8 col-md-8">
-            <h3 class="mb-30">Hello! Please enter your information.</h3>
-            <form name="HMS" method="post" action="staffSave.php">
-                <div class="mt-10" style="padding-bottom:10px;">
-                    <label for="name">ID:</label>
-                    <input type="text" maxlength="20" name="id" placeholder="Enter ID here"
-                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter ID here'" required
-                        class="single-input">
-                </div>
-                <div class="mt-10" style="padding-bottom:10px;">
-                    <label for="password">Password:</label>
-                    <input type="password" maxlength="20" name="pwd" placeholder="Enter Password here"
-                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Password here'" required
-                        class="single-input">
-                </div>
-                <div class="mt-10" style="padding-bottom:10px;">
-                    <label for="password2">Retype password:</label>
-                    <input type="password" maxlength="20" name="pwd2" placeholder="Enter Password again"
-                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Password agian'" required
-                        class="single-input">
-                </div>
-                <div class="mt-10" style="padding-bottom:10px;">
-                    <label for="name">Name:</label>
-                    <input type="text" maxlength="20" name="name" placeholder="Enter your name here"
-                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name here'" required
-                        class="single-input">
-                </div>
-                <div class="mt-10" style="padding-bottom:10px;">
-                    <label for="phone">Phone Number:</label>
-                    <input type="text" maxlength="11" name="phone" placeholder="Enter your phone number here"
-                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your phone number here'" required
-                        class="single-input">
-                </div>
-                <div class="input-group-icon mt-10">
-                    <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
-                    <div class="form-select" id="default-select"">
-                                <select name="department">
-                                    <option style="text-align:center;" value=" 1">dept</option>
-                        <option value="roomkeeper">roomkeeper</option>
-                        <option value="receptionist">receptionist</option>
-                        <option value="manager">manager</option>
-                        </select>
+        <div class="row">
+            <div class="col-lg-8 col-md-8">
+                <h3 class="mb-30">Hello! Please enter your information.</h3>
+                <form name="HMS" method="post" action="staffSave.php">
+                    <div class="mt-10" style="padding-bottom:10px;">
+                        <label for="name">ID:</label>
+                        <input type="text" maxlength="20" name="id" placeholder="Enter ID here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter ID here'" required class="single-input">
                     </div>
-                </div>
+                    <div class="mt-10" style="padding-bottom:10px;">
+                        <label for="password">Password:</label>
+                        <input type="password" maxlength="20" name="pwd" placeholder="Enter Password here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Password here'" required class="single-input">
+                    </div>
+                    <div class="mt-10" style="padding-bottom:10px;">
+                        <label for="password2">Retype password:</label>
+                        <input type="password" maxlength="20" name="pwd2" placeholder="Enter Password again" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Password agian'" required class="single-input">
+                    </div>
+                    <div class="mt-10" style="padding-bottom:10px;">
+                        <label for="name">Name:</label>
+                        <input type="text" maxlength="20" name="name" placeholder="Enter your name here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name here'" required class="single-input">
+                    </div>
+                    <div class="mt-10" style="padding-bottom:10px;">
+                        <label for="phone">Phone Number:</label>
+                        <input type="text" maxlength="11" name="phone" placeholder="Enter your phone number here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your phone number here'" required class="single-input">
+                    </div>
+                    <div class="input-group-icon mt-10">
+                        <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
+                        <label for="phone">Department:</label>
+                        <div class="form-select" id="default-select">
+                            <select name=" department">
+                                <option value="roomkeeper">Roomkeeper</option>
+                                <option value="receptionist">Receptionist</option>
+                                <option value="manager">Manager</option>
+                            </select>
+                        </div>
+                    </div>
 
-                <ul class="actions">
-                    <button type=submit class="genric-btn success medium">submit</button>
-                    <button type=reset class="genric-btn success medium">restart</button>
-                </ul>
-            </form>
-        </div>
-        
-    <!-- End Align Area -->
+                    <ul class="actions">
+                        <button type=submit class="genric-btn success medium">submit</button>
+                        <button type=reset class="genric-btn success medium">restart</button>
+                    </ul>
+                </form>
+            </div>
+
+            <!-- End Align Area -->
 
 
-    <!-- jquery plugins here-->
-    <script src="js/jquery-1.12.1.min.js"></script>
-    <!-- popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- magnific js -->
-    <script src="js/jquery.magnific-popup.js"></script>
-    <!-- swiper js -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- masonry js -->
-    <script src="js/masonry.pkgd.js"></script>
-    <!-- masonry js -->
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/gijgo.min.js"></script>
-    <!-- contact js -->
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="js/contact.js"></script>
-    <!-- custom js -->
-    <script src="js/custom.js"></script>
+            <!-- jquery plugins here-->
+            <script src="js/jquery-1.12.1.min.js"></script>
+            <!-- popper js -->
+            <script src="js/popper.min.js"></script>
+            <!-- bootstrap js -->
+            <script src="js/bootstrap.min.js"></script>
+            <!-- magnific js -->
+            <script src="js/jquery.magnific-popup.js"></script>
+            <!-- swiper js -->
+            <script src="js/owl.carousel.min.js"></script>
+            <!-- masonry js -->
+            <script src="js/masonry.pkgd.js"></script>
+            <!-- masonry js -->
+            <script src="js/jquery.nice-select.min.js"></script>
+            <script src="js/gijgo.min.js"></script>
+            <!-- contact js -->
+            <script src="js/jquery.ajaxchimp.min.js"></script>
+            <script src="js/jquery.form.js"></script>
+            <script src="js/jquery.validate.min.js"></script>
+            <script src="js/mail-script.js"></script>
+            <script src="js/contact.js"></script>
+            <!-- custom js -->
+            <script src="js/custom.js"></script>
 
-    <script src="js/sign.js"></script>
-    
+            <script src="js/sign.js"></script>
+
 </body>
 
 </html>
