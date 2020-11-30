@@ -86,6 +86,7 @@ include 'basic.php';
                                 </ul>
                             </div>
                             <!-- Start 출퇴근 기능 -->
+                            <p style="color:navy">Welcome, <?= $staff_name ?>  &nbsp;</p>
                             <?php
                             if ($result_s[0]['attendance'] == 1) { ?>
                                 <form action='staffAttendance.php' method='POST'>
@@ -97,7 +98,7 @@ include 'basic.php';
                                 </form>
                             <?php }
                             ?>
-                            <p> <?= $staff_name ?> 님</p>
+                            <p>&nbsp;</p>
                             <a href="logout.php" class="genric-btn primary">로그아웃</a>
                             <!-- End 출퇴근 기능 -->
                         </nav>
@@ -108,26 +109,10 @@ include 'basic.php';
     </header>
     <!-- Header part end-->
 
-    <!-- breadcrumb start-->
-    <section class="breadcrumb breadcrumb_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner">
-                        <div class="breadcrumb_iner_item text-center">
-                            <h2>contact</h2>
-                            <p>home . contact</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- breadcrumb start-->
 
     <!-- Start 고객 접수(불만 및 서비스) 기능 -->
-    <div class="col-lg-8 col-md-8">
-        <h3 class="mb-30">고객 접수</h3>
+    <div style='margin-left:20px;' class="col-lg-8 col-md-8">
+        <h3 style='margin-left:20px;' class="mb-30">고객 접수</h3>
         <form action="complain.php" method="POST">
             <div class="input-group-icon mt-10">
                 <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
@@ -144,7 +129,7 @@ include 'basic.php';
             <div class="mt-10">
                 <input type="text" id="rnumber" name="rnumber" placeholder="Room Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Room Number'" required="" class="single-input">
             </div>
-            <div class="mt-10">
+            <div style='padding-bottom:10px' class="mt-10">
                 <textarea id="detail" name="detail" class="single-textarea" placeholder="Detail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Detail'" required="" pwa2-uuid="EDITOR-B8D-7F0-F5AAF-25B" pwa-fake-editor=""></textarea>
                 <pwa-editor-bar-cnt>
                     <pwa-editor-bar pwa2-uuid="EDITOR-B8D-7F0-F5AAF-25B" class="bar-full invisible" style="right: -505px !important; bottom: 5px !important;">
@@ -166,7 +151,8 @@ include 'basic.php';
                     </pwa-editor-bar>
                 </pwa-editor-bar-cnt>
             </div>
-            <button class="genric-btn success circle" id='register'> 제출 </button>
+            <button class="genric-btn success circle" id='register'> Submit </button>
+            <p>&nbsp;</p>
         </form>
     </div>
     <!-- End 고객 접수(불만 및 서비스) 기능 -->

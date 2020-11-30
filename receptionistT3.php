@@ -89,6 +89,7 @@ $result3 = $stmt3->fetchAll();
                                 </ul>
                             </div>
                             <!-- Start 출퇴근 기능 -->
+                            <p style="color:navy">Welcome, <?= $staff_name ?>  &nbsp;</p>
                             <?php
                             if ($result_s[0]['attendance'] == 1) { ?>
                                 <form action='staffAttendance.php' method='POST'>
@@ -100,7 +101,7 @@ $result3 = $stmt3->fetchAll();
                                 </form>
                             <?php }
                             ?>
-                            <p> <?= $staff_name ?> 님</p>
+                            <p>&nbsp;</p>
                             <a href="logout.php" class="genric-btn primary">로그아웃</a>
                             <!-- End 출퇴근 기능 -->
                         </nav>
@@ -111,26 +112,10 @@ $result3 = $stmt3->fetchAll();
     </header>
     <!-- Header part end-->
 
-    <!-- breadcrumb start-->
-    <section class="breadcrumb breadcrumb_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner">
-                        <div class="breadcrumb_iner_item text-center">
-                            <h2>contact</h2>
-                            <p>home . contact</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- breadcrumb start-->
 
     <!-- Start 예정된 체크아웃 기능 -->
     <div class="section-top-border">
-        <h3 class="mb-30">예정된 체크아웃</h3>
+        <h3 style='margin-left:40px;' class="mb-30">예정된 체크아웃</h3>
         <div class="progress-table-wrap">
             <div class="progress-table">
                 <div class="table-head">
