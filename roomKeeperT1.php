@@ -11,7 +11,7 @@ $result = $stmt->fetchAll();
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Martine</title>
+    <title>BHotel</title>
     <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -44,7 +44,7 @@ $result = $stmt->fetchAll();
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 col-md-6">
                         <div class="sub_menu_right_content">
-                            <span>Top destinations</span>
+                            <span>BHotel locations</span>
                             <a href="#">Asia</a>
                             <a href="#">Europe</a>
                             <a href="#">America</a>
@@ -56,7 +56,7 @@ $result = $stmt->fetchAll();
                             <a href="#"><i class="flaticon-twitter"></i></a>
                             <a href="#"><i class="flaticon-skype"></i></a>
                             <a href="#"><i class="flaticon-instagram"></i></a>
-                            <span><i class="flaticon-phone-call"></i>+880 356 257 142</a></span>
+                            <span><i class="flaticon-phone-call"></i>031 400 1005</a></span>
                         </div>
                     </div>
                 </div>
@@ -75,10 +75,10 @@ $result = $stmt->fetchAll();
                             <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="roomKeeperT1.php">할당된 청소</a>
+                                        <a class="nav-link" href="roomKeeperT1.php">Clean-duty</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="roomKeeperT2.php">고객접수</a>
+                                        <a class="nav-link" href="roomKeeperT2.php">Customer Service</a>
                                     </li>
                                 </ul>
                             </div>
@@ -87,16 +87,16 @@ $result = $stmt->fetchAll();
                             <?php
                             if ($result_s[0]['attendance'] == 1) { ?>
                                 <form action='staffAttendance.php' method='POST'>
-                                    <button class="genric-btn primary" type='submit' name='attendance' value='f'>퇴근하기</button>
+                                    <button class="genric-btn primary" type='submit' name='attendance' value='f'>Leave</button>
                                 </form>
                             <?php } else { ?>
                                 <form action='staffAttendance.php' method='POST'>
-                                    <button class="genric-btn primary" type='submit' name='attendance' value='t'>출근하기</button>
+                                    <button class="genric-btn primary" type='submit' name='attendance' value='t'>Attend</button>
                                 </form>
                             <?php }
                             ?>
                             <p>&nbsp;</p>
-                            <a href="logout.php" class="genric-btn primary">로그아웃</a>
+                            <a href="logout.php" class="genric-btn primary">Log Out</a>
                             <!-- End 출퇴근 기능 -->
                         </nav>
                     </div>
@@ -108,14 +108,14 @@ $result = $stmt->fetchAll();
 
 
     <!-- Start 할당된 청소 현황 -->
-    <div class="section-top-border">
-        <h3 style='margin-left:40px;' class="mb-30">할당된 청소</h3>
+    <div style='margin-right:90px; margin-left:90px;' class="section-top-border">
+        <h3 class="mb-30">Clean-Duty</h3>
         <div class="progress-table-wrap">
             <div class="progress-table">
                 <div class="table-head">
-                    <div class="serial">접수시간</div>
-                    <div class="serial">방번호</div>
-                    <div class="serial">청소</div>
+                    <div class="serial">Time</div>
+                    <div class="serial">Room No.</div>
+                    <div class="serial">Status</div>
                 </div>
                 <?php for ($i = 0; $i < count($result); $i++) { ?>
                     <div class="table-row">
@@ -123,7 +123,7 @@ $result = $stmt->fetchAll();
                         <div class="serial"><?= $result[$i]['rnumber'] ?></div>
                         <form action='cleaningComplete.php' method='POST'>
                             <input type='hidden' name='rnumber' value='<?= $result[$i]['rnumber'] ?>'></input>
-                            <button class="genric-btn info circle progress-bar" type='submit' name='complete' value='<?= $result[$i]['code'] ?>'>완료</button>
+                            <button class="genric-btn info circle progress-bar" type='submit' name='complete' value='<?= $result[$i]['code'] ?>'>Complete</button>
                         </form>
                     </div>
                 <?php } ?>
@@ -177,8 +177,8 @@ $result = $stmt->fetchAll();
                 <div class="col-sm-6 col-md-3">
                     <div class="single-footer-widget footer_icon">
                         <h4>Contact Us</h4>
-                        <p>4156, New garden, New York, USA +880 362 352 783</p>
-                        <span>contact@martine.com</span>
+                        <p>Jeju Island, 031 400 1005</p>
+                        <span>contact@BHotel.com</span>
                         <div class="social-icons">
                             <a href="#"><i class="ti-facebook"></i></a>
                             <a href="#"><i class="ti-twitter-alt"></i></a>

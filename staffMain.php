@@ -1,26 +1,6 @@
 <!DOCTYPE html>
 <?php session_start() ?>
-<!--html lang="en">
 
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MainPage</title>
-
-</head>
-
-<body>
-
-    <form action="login.php" method="POST">
-        <input type="text" id ="id" name="ID">
-        <input type="PASSWORD" id = "pw" name="PW">
-        <button id = "login"> 로그인 </button>        
-    </form>
-
-    <a href="signUp.php">회원가입 페이지 이동</a>
-</body>
-</html-->
 
 <html lang="en">
 
@@ -28,7 +8,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hotel</title>
+    <title>Welcome</title>
     <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">

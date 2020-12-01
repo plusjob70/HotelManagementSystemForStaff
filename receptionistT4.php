@@ -8,7 +8,7 @@ include 'basic.php';
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Martine</title>
+    <title>BHotel</title>
     <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -41,7 +41,7 @@ include 'basic.php';
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 col-md-6">
                         <div class="sub_menu_right_content">
-                            <span>Top destinations</span>
+                            <span>BHotel locations</span>
                             <a href="#">Asia</a>
                             <a href="#">Europe</a>
                             <a href="#">America</a>
@@ -53,7 +53,7 @@ include 'basic.php';
                             <a href="#"><i class="flaticon-twitter"></i></a>
                             <a href="#"><i class="flaticon-skype"></i></a>
                             <a href="#"><i class="flaticon-instagram"></i></a>
-                            <span><i class="flaticon-phone-call"></i>+880 356 257 142</a></span>
+                            <span><i class="flaticon-phone-call"></i>031 400 1005</a></span>
                         </div>
                     </div>
                 </div>
@@ -72,16 +72,16 @@ include 'basic.php';
                             <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="receptionistT1.php">예약현황</a>
+                                        <a class="nav-link" href="receptionistT1.php">Reservations</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="receptionistT2.php">예정된 체크인</a>
+                                        <a class="nav-link" href="receptionistT2.php">Check-ins</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="receptionistT3.php">예정된 체크아웃</a>
+                                        <a class="nav-link" href="receptionistT3.php">Check-outs</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="receptionistT4.php">고객 접수</a>
+                                        <a class="nav-link" href="receptionistT4.php">Service</a>
                                     </li>
                                 </ul>
                             </div>
@@ -90,16 +90,16 @@ include 'basic.php';
                             <?php
                             if ($result_s[0]['attendance'] == 1) { ?>
                                 <form action='staffAttendance.php' method='POST'>
-                                    <button class="genric-btn primary" type='submit' name='attendance' value='f'>퇴근하기</button>
+                                    <button class="genric-btn primary" type='submit' name='attendance' value='f'>Leave</button>
                                 </form>
                             <?php } else { ?>
                                 <form action='staffAttendance.php' method='POST'>
-                                    <button class="genric-btn primary" type='submit' name='attendance' value='t'>출근하기</button>
+                                    <button class="genric-btn primary" type='submit' name='attendance' value='t'>Attend</button>
                                 </form>
                             <?php }
                             ?>
                             <p>&nbsp;</p>
-                            <a href="logout.php" class="genric-btn primary">로그아웃</a>
+                            <a href="logout.php" class="genric-btn primary">Log Out</a>
                             <!-- End 출퇴근 기능 -->
                         </nav>
                     </div>
@@ -111,18 +111,18 @@ include 'basic.php';
 
 
     <!-- Start 고객 접수(불만 및 서비스) 기능 -->
-    <div style='margin-left:20px;' class="col-lg-8 col-md-8">
-        <h3 style='margin-left:20px;' class="mb-30">고객 접수</h3>
+    <div style='margin-left:80px;' class="col-lg-8 col-md-8">
+        <h3 class="mb-30">Customer Service</h3>
         <form action="complain.php" method="POST">
             <div class="input-group-icon mt-10">
                 <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
                 <div class="form-select" id="default-select" "="">
 					<select name="complainment">
-                    <option value="고장">고장</option>
-                    <option value="위생">위생</option>
-                    <option value="소음">소음</option>
-                    <option value="서비스">서비스</option>
-                    <option value="기타">기타</option>
+                    <option value="고장">Repair</option>
+                    <option value="위생">Sanitation</option>
+                    <option value="소음">Noise</option>
+                    <option value="서비스">Service</option>
+                    <option value="기타">Others</option>
                     </select>
                 </div>
             </div>
@@ -202,8 +202,8 @@ include 'basic.php';
                 <div class="col-sm-6 col-md-3">
                     <div class="single-footer-widget footer_icon">
                         <h4>Contact Us</h4>
-                        <p>4156, New garden, New York, USA +880 362 352 783</p>
-                        <span>contact@martine.com</span>
+                        <p>Jeju Island, 031 400 1005</p>
+                        <span>contact@BHotel.com</span>
                         <div class="social-icons">
                             <a href="#"><i class="ti-facebook"></i></a>
                             <a href="#"><i class="ti-twitter-alt"></i></a>

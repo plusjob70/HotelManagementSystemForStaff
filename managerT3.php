@@ -25,7 +25,7 @@ $result3_2 = $stmt3_2->fetchAll();
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Martine</title>
+    <title>BHotel</title>
     <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -59,7 +59,7 @@ $result3_2 = $stmt3_2->fetchAll();
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 col-md-6">
                         <div class="sub_menu_right_content">
-                            <span>Top destinations</span>
+                            <span>BHotel locations</span>
                             <a href="#">Asia</a>
                             <a href="#">Europe</a>
                             <a href="#">America</a>
@@ -71,7 +71,7 @@ $result3_2 = $stmt3_2->fetchAll();
                             <a href="#"><i class="flaticon-twitter"></i></a>
                             <a href="#"><i class="flaticon-skype"></i></a>
                             <a href="#"><i class="flaticon-instagram"></i></a>
-                            <span><i class="flaticon-phone-call"></i>+880 356 257 142</a></span>
+                            <span><i class="flaticon-phone-call"></i>031 400 1005</a></span>
                         </div>
                     </div>
                 </div>
@@ -90,39 +90,47 @@ $result3_2 = $stmt3_2->fetchAll();
                             <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="managerT1.php">예약현황</a>
+                                        <a class="nav-link" href="managerT1.php">      
+                                        <span style='font-size:14px;'>Reservations</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="managerT2.php">출근현황</a>
+                                        <a class="nav-link" href="managerT2.php">
+                                        <span style='font-size:14px;'>
+                                        Attendance</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="managerT3.php">청소배정</a>
+                                        <a class="nav-link" href="managerT3.php">
+                                        <span style='font-size:14px;'>Cleaning</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="managerT4.php">고객 접수사항</a>
+                                        <a class="nav-link" href="managerT4.php">
+                                        <span style='font-size:14px;'>Service</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="managerT5.php">업무현황</a>
+                                        <a class="nav-link" href="managerT5.php">
+                                        <span style='font-size:14px;'>Tasks</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="managerT6.php">고객기록</a>
+                                        <a class="nav-link" href="managerT6.php">
+                                        <span style='font-size:14px;'>Customer Log</a>
                                     </li>
                                 </ul>
                             </div>
                             <!-- Start 출퇴근 기능 -->
+                            <p style="color:navy">Welcome, <?= $staff_name ?>  &nbsp;</p>
                             <?php
                             if ($result_s[0]['attendance'] == 1) { ?>
                                 <form action='staffAttendance.php' method='POST'>
-                                    <button class="genric-btn primary" type='submit' name='attendance' value='f'>퇴근하기</button>
+                                    <button class="genric-btn primary" type='submit' name='attendance' value='f'>Leave</button>
                                 </form>
                             <?php } else { ?>
                                 <form action='staffAttendance.php' method='POST'>
-                                    <button class="genric-btn primary" type='submit' name='attendance' value='t'>출근하기</button>
+                                    <button class="genric-btn primary" type='submit' name='attendance' value='t'>Attend</button>
                                 </form>
                             <?php }
                             ?>
-                            <p> <?= $staff_name ?> 님</p>
-                            <a href="logout.php" class="genric-btn primary">로그아웃</a>
+                            <p>&nbsp;</p>
+                            <a href="logout.php" class="genric-btn primary">Log Out</a>
                             <!-- End 출퇴근 기능 -->
                         </nav>
                     </div>
@@ -132,26 +140,10 @@ $result3_2 = $stmt3_2->fetchAll();
     </header>
     <!-- Header part end-->
 
-    <!-- breadcrumb start-->
-    <section class="breadcrumb breadcrumb_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner">
-                        <div class="breadcrumb_iner_item text-center">
-                            <h2>contact</h2>
-                            <p>home . contact</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- breadcrumb start-->
 
     <!-- Start 룸키퍼 청소배정 기능 -->
-    <div class="col-lg-8 col-md-8">
-        <h3 class="mb-30">청소 배정</h3>
+    <div style='margin-left:340px;' class="col-lg-8 col-md-8">
+        <h3 class="mb-30">Cleaning</h3>
             <div class="input-group-icon mt-10">
                 <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
                 <div class="form-select" id="default-select" "="">
@@ -165,7 +157,7 @@ $result3_2 = $stmt3_2->fetchAll();
     </div>
 
     <form action='cleaning.php' method='POST'>
-        <table>
+        <table style='margin-left:300px; margin-bottom:30px;'>
             <?php foreach ($room as $floor => $bundle) { ?>
                 <tr>
                     <?php foreach ($room[$floor] as $seq => $rnumber) { ?>
@@ -229,8 +221,8 @@ $result3_2 = $stmt3_2->fetchAll();
                 <div class="col-sm-6 col-md-3">
                     <div class="single-footer-widget footer_icon">
                         <h4>Contact Us</h4>
-                        <p>4156, New garden, New York, USA +880 362 352 783</p>
-                        <span>contact@martine.com</span>
+                        <p>Jeju Island, 031 400 1005</p>
+                        <span>contact@BHotel.com</span>
                         <div class="social-icons">
                             <a href="#"><i class="ti-facebook"></i></a>
                             <a href="#"><i class="ti-twitter-alt"></i></a>

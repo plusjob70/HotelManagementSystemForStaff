@@ -11,7 +11,7 @@ $result = $stmt->fetchAll();
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hotel</title>
+    <title>BHotel</title>
     <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -44,7 +44,7 @@ $result = $stmt->fetchAll();
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 col-md-6">
                         <div class="sub_menu_right_content">
-                            <span>Top destinations</span>
+                            <span>BHotel locations</span>
                             <a href="#">Asia</a>
                             <a href="#">Europe</a>
                             <a href="#">America</a>
@@ -56,7 +56,7 @@ $result = $stmt->fetchAll();
                             <a href="#"><i class="flaticon-twitter"></i></a>
                             <a href="#"><i class="flaticon-skype"></i></a>
                             <a href="#"><i class="flaticon-instagram"></i></a>
-                            <span><i class="flaticon-phone-call"></i>+82 010 1234 5678</a></span>
+                            <span><i class="flaticon-phone-call"></i>031 400 1005</a></span>
                         </div>
                     </div>
                 </div>
@@ -75,14 +75,14 @@ $result = $stmt->fetchAll();
                             <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="masterT1.php">직원 가입요청</a>
+                                        <a class="nav-link" href="masterT1.php">Staff Registration</a>
                                     </li>
                                 </ul>
                             </div>
                             <!-- Start 로그아웃 기능 -->
-                            <p style="color:navy;"> <?= $staff_name ?> 님&nbsp;</p>
-                            <a href="logout.php" class="genric-btn primary">로그아웃</a>
-                            <!-- End 로그아웃 기능 -->
+                            <p style="color:navy">Welcome, <?= $staff_name ?>  &nbsp;</p>
+                            <a href="logout.php" class="genric-btn primary">Log Out</a>
+                            
                         </nav>
                     </div>
                 </div>
@@ -93,17 +93,17 @@ $result = $stmt->fetchAll();
 
 
     <!-- Start 직원 회원가입 승인 -->
-    <div class="section-top-border">
-        <h3 class="mb-30">요청된 직원가입</h3>
+    <div style='margin-right:100px; margin-left:100px;' class="section-top-border">
+        <h3 class="mb-30">Staff Registration</h3>
         <div class="progress-table-wrap">
             <div class="progress-table">
                 <div class="table-head">
-                    <div class="serial">아이디</div>
-                    <div class="serial">이름</div>
-                    <div class="serial">전화번호</div>
-                    <div class="serial">부서</div>
-                    <div class="serial">승인</div>
-                    <div class="serial">거부</div>
+                    <div class="serial">ID</div>
+                    <div class="serial">Name</div>
+                    <div class="serial">Cell</div>
+                    <div class="serial">Dept.</div>
+                    <div class="serial">Accept</div>
+                    <div class="serial">Decline</div>
                 </div>
                 <?php for ($i = 0; $i < count($result); $i++) { ?>
                     <div class="table-row">
@@ -113,11 +113,11 @@ $result = $stmt->fetchAll();
                         <div class="serial"><?= $result[$i]['department'] ?></div>
                         <form action='confirmSignUp.php' method='POST'>
                             <input type = 'hidden' name='staff_id' value='<?= $result[$i]["id"] ?>'></input>
-                            <button class="genric-btn info circle progress-bar" type='submit' name='staffSignUp' value='t'>확인</button>
+                            <button class="genric-btn info circle progress-bar" type='submit' name='staffSignUp' value='t'>Accept</button>
                         </form>
                         <form action='confirmSignUp.php' method='POST'>
                             <input type = 'hidden' name='staff_id' value='<?= $result[$i]["id"] ?>'></input>
-                            <button class="genric-btn danger circle" type='submit' name='staffSignUp' value='f'>확인</button>
+                            <button class="genric-btn danger circle" type='submit' name='staffSignUp' value='f'>Decline</button>
                         </form>
                     </div>
                 <?php } ?>
@@ -171,8 +171,8 @@ $result = $stmt->fetchAll();
                 <div class="col-sm-6 col-md-3">
                     <div class="single-footer-widget footer_icon">
                         <h4>Contact Us</h4>
-                        <p>South Korea +82 010 1234 5678</p>
-                        <span>contact@.com</span>
+                        <p>Jeju Island, 031 400 1005</p>
+                        <span>contact@BHotel.com</span>
                         <div class="social-icons">
                             <a href="#"><i class="ti-facebook"></i></a>
                             <a href="#"><i class="ti-twitter-alt"></i></a>
