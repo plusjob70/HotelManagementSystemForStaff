@@ -3,7 +3,7 @@
 <?php
 include 'basic.php';
 
-$stmt = $db->query("SELECT * FROM staff WHERE accept = 0");
+$stmt = $db->query("SELECT * FROM staff WHERE accept = 1 AND id != 'admin'");
 $result = $stmt->fetchAll();
 ?>
 
@@ -97,7 +97,7 @@ $result = $stmt->fetchAll();
 
     <!-- Start 직원 회원가입 승인 -->
     <div style='margin-right:100px; margin-left:100px;' class="section-top-border">
-        <h3 class="mb-30">Staff Registration</h3>
+        <h3 class="mb-30">Staff Management</h3>
         <div class="progress-table-wrap">
             <div class="progress-table">
                 <div class="table-head">
@@ -105,8 +105,7 @@ $result = $stmt->fetchAll();
                     <div class="serial">Name</div>
                     <div class="serial">Cell</div>
                     <div class="serial">Dept.</div>
-                    <div class="serial">Accept</div>
-                    <div class="serial">Decline</div>
+                    <div class="serial">Delete</div>
                 </div>
                 <?php for ($i = 0; $i < count($result); $i++) { ?>
                     <div class="table-row">
@@ -114,13 +113,9 @@ $result = $stmt->fetchAll();
                         <div class="serial"><?= $result[$i]['sname'] ?></div>
                         <div class="serial"><?= $result[$i]['phone'] ?></div>
                         <div class="serial"><?= $result[$i]['department'] ?></div>
-                        <form action='confirmSignUp.php' method='POST'>
+                        <form action='deleteStaff.php' method='POST'>
                             <input type = 'hidden' name='staff_id' value='<?= $result[$i]["id"] ?>'></input>
-                            <button class="genric-btn info circle progress-bar" type='submit' name='staffSignUp' value='t'>Accept</button>
-                        </form>
-                        <form action='confirmSignUp.php' method='POST'>
-                            <input type = 'hidden' name='staff_id' value='<?= $result[$i]["id"] ?>'></input>
-                            <button class="genric-btn danger circle" type='submit' name='staffSignUp' value='f'>Decline</button>
+                            <button class="genric-btn danger circle" type='submit' name='deleteStaff'>Delete</button>
                         </form>
                     </div>
                 <?php } ?>
