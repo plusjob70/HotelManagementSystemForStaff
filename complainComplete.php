@@ -10,7 +10,7 @@
     $q_staff_id = $db->quote($staff_id);
 
     $str = "INSERT INTO task_log (ttime, rnumber, staff_id, tstatus)
-            VALUE (NOW()," .$q_rnumber. "," .$q_staff_id. ", '불만처리')";
+            VALUE (NOW()," .$q_rnumber. "," .$q_staff_id. ", 'COMPLAIN')";
     $str2 = "DELETE FROM complainment WHERE code =" .$q_code;
 
     $db->exec($str);
