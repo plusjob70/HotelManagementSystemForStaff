@@ -113,10 +113,12 @@ $result = $stmt->fetchAll();
                         <div class="serial"><?= $result[$i]['sname'] ?></div>
                         <div class="serial"><?= $result[$i]['phone'] ?></div>
                         <div class="serial"><?= $result[$i]['department'] ?></div>
-                        <form action='deleteStaff.php' method='POST'>
-                            <input type = 'hidden' name='staff_id' value='<?= $result[$i]["id"] ?>'></input>
-                            <button class="genric-btn danger circle" type='submit' name='deleteStaff'>Delete</button>
-                        </form>
+                        <div class="serial">
+                            <form action='deleteStaff.php' method='POST'>
+                                <input type = 'hidden' name='staff_id' value='<?= $result[$i]["id"] ?>'></input>
+                                <button class="genric-btn danger circle" type='submit' name='deleteStaff'>Delete</button>
+                            </form>
+                        </div>
                     </div>
                 <?php } ?>
             </div>

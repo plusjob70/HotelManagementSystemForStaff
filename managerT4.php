@@ -161,10 +161,12 @@ $result4_2 = $stmt4_2->fetchAll();
                         <div class="serial"><?= $result4_2[$i]['staff_id'] ?></div>
                         <div class="serial"><?= $result4_2[$i]['complainment'] ?></div>
                         <div class="percentage"><?= $result4_2[$i]['detail'] ?></div>
-                        <form action='complainRecept.php' method='POST'>
-                            <input type='hidden' name='selected_staff' value='staff'></input>
-                            <button class="genric-btn info circle progress-bar serial" type='submit' name='recept' value='<?= $result4_2[$i]['code'] ?>'> 가능 </button>
-                        </form>
+                        <div class="serial">
+                            <form action='complainRecept.php' method='POST'>
+                                <input type='hidden' name='selected_staff' value='staff'></input>
+                                <button class="genric-btn info circle progress-bar serial" type='submit' name='recept' value='<?= $result4_2[$i]['code'] ?>'> 가능 </button>
+                            </form>
+                        </div>
                     </div>
                 <?php } ?>
             </div>

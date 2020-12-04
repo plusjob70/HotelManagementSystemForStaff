@@ -114,14 +114,18 @@ $result = $stmt->fetchAll();
                         <div class="serial"><?= $result[$i]['sname'] ?></div>
                         <div class="serial"><?= $result[$i]['phone'] ?></div>
                         <div class="serial"><?= $result[$i]['department'] ?></div>
-                        <form action='confirmSignUp.php' method='POST'>
-                            <input type = 'hidden' name='staff_id' value='<?= $result[$i]["id"] ?>'></input>
-                            <button class="genric-btn info circle progress-bar" type='submit' name='staffSignUp' value='t'>Accept</button>
-                        </form>
-                        <form action='confirmSignUp.php' method='POST'>
-                            <input type = 'hidden' name='staff_id' value='<?= $result[$i]["id"] ?>'></input>
-                            <button class="genric-btn danger circle" type='submit' name='staffSignUp' value='f'>Decline</button>
-                        </form>
+                        <div class="serial">
+                            <form action='confirmSignUp.php' method='POST'>
+                                <input type = 'hidden' name='staff_id' value='<?= $result[$i]["id"] ?>'></input>
+                                <button class="genric-btn info circle progress-bar" type='submit' name='staffSignUp' value='t'>Accept</button>
+                            </form>
+                        </div>
+                        <div class="serial">
+                            <form action='confirmSignUp.php' method='POST'>
+                                <input type = 'hidden' name='staff_id' value='<?= $result[$i]["id"] ?>'></input>
+                                <button class="genric-btn danger circle" type='submit' name='staffSignUp' value='f'>Decline</button>
+                            </form>
+                        </div>
                     </div>
                 <?php } ?>
             </div>

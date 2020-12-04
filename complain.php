@@ -14,7 +14,7 @@
                  VALUE (NOW()," .$q_rnumber. "," .$q_staff_id. "," .$q_complainment. "," .$q_detail. ", 0)";
         $db->exec($str);
     
-        print "<script language=javascript> alert('불만사항이 접수되었습니다.'); location.replace('receptionistT4.php'); </script>";
+        print "<script language=javascript> alert('Request has been registered.'); location.replace('receptionistT4.php'); </script>";
         exit;
     }catch(PDOException $ex){ ?>
         <p>Sorry, a database error occurred. Please try again later.</p>

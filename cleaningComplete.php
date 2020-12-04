@@ -19,6 +19,6 @@
     $db->exec($str2);
     $db->exec($str3);
 
-    print "<script language=javascript> alert('청소를 완료하였습니다.'); location.replace('roomKeeperT1.php'); </script>";
+    print "<script language=javascript> alert('Cleaning complete.'); location.replace('roomKeeperT1.php'); </script>";
     exit;
 ?>

@@ -32,7 +32,7 @@
         $db->exec($str3);
         $db->exec($str4);
 
-        print "<script language=javascript> alert('체크아웃 되었습니다.'); history.back(); </script>";
+        print "<script language=javascript> alert('Check-out complete.'); history.back(); </script>";
         exit;
 
     } catch (PDOException $ex) {

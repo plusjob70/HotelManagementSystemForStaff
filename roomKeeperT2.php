@@ -125,10 +125,12 @@ $result2 = $stmt2->fetchAll();
                         <div class="serial"><?= $result2[$i]['rnumber'] ?></div>
                         <div class="serial"><?= $result2[$i]['complainment'] ?></div>
                         <div class="percentage"><?= $result2[$i]['detail'] ?></div>
-                        <form action='complainComplete.php' method='POST'>
-                            <input type='hidden' name='rnumber' value='<?= $result2[$i]['rnumber'] ?>'></input>
-                            <button class="genric-btn info circle progress-bar" type='submit' name='recept' value='<?= $result2[$i]['code'] ?>'>Complete</button>
-                        </form>
+                        <div class="serial">
+                            <form action='complainComplete.php' method='POST'>
+                                <input type='hidden' name='rnumber' value='<?= $result2[$i]['rnumber'] ?>'></input>
+                                <button class="genric-btn info circle progress-bar" type='submit' name='recept' value='<?= $result2[$i]['code'] ?>'>Complete</button>
+                            </form>
+                        </div>
                     </div>
                 <?php } ?>
             </div>

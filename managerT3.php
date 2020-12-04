@@ -142,7 +142,7 @@ $result3_2 = $stmt3_2->fetchAll();
 
 
     <!-- Start 룸키퍼 청소배정 기능 -->
-    <div style='margin-left:340px;' class="col-lg-8 col-md-8">
+    <div style='margin-left:300px;' class="col-lg-8 col-md-8">
         <h3 class="mb-30">Cleaning</h3>
             <div class="input-group-icon mt-10">
                 <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
@@ -164,10 +164,10 @@ $result3_2 = $stmt3_2->fetchAll();
                         <?php if ($result3_2[$seq]['clean'] == 0 && $result3_2[$seq]['isEmpty'] == 1) { ?>
                             <td>
                                 <input type='hidden' name='selected_staff' value='staff'></input>
-                                <button class="genric-btn info" type='submit' name='rnumber' value='<?= $rnumber ?>'> <?= $rnumber ?> </button>
+                                <button style="margin-top:5px;" class="genric-btn info" type='submit' name='rnumber' value='<?= $rnumber ?>'> <?= $rnumber ?> </button>
                             </td>
                         <?php } else { ?>
-                            <td><button class="genric-btn info-border" type='submit' name='rnumber' disabled> <?= $rnumber ?> </button></td>
+                            <td><button style="margin-top:5px;" class="genric-btn info-border" type='submit' name='rnumber' disabled> <?= $rnumber ?> </button></td>
                         <?php } ?>
                     <?php } ?>
                 </tr>

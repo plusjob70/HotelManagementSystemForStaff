@@ -14,7 +14,7 @@
     $db->exec($str);
     $db->exec($str2);
 
-    print "<script language=javascript> alert('체크인 되었습니다.'); history.back(); </script>";
+    print "<script language=javascript> alert('Check-in complete.'); history.back(); </script>";
     exit;
 
 ?>

@@ -6,6 +6,6 @@
     $q_staff_id = $db->quote($staff_id);
     $db->exec("DELETE FROM staff WHERE id = " .$q_staff_id);
 
-    print "<script language=javascript> alert('해당직원의 정보가 삭제되었습니다.'); history.back(); </script>";
+    print "<script language=javascript> alert('Staff information has been removed.'); history.back(); </script>";
     exit;
 ?>

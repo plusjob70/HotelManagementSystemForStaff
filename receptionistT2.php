@@ -129,8 +129,9 @@ $result2 = $stmt2->fetchAll();
                     <div class="serial">Check-out</div>
                     <div class="serial">Status</div>
                 </div>
-                <?php for ($i = 0; $i < count($result2); $i++) { ?>
-                    <div class="table-row">
+                <div class="table-row">
+                    <?php for ($i = 0; $i < count($result2); $i++) { ?>
+                    
                         <div class="serial"><?= $result2[$i]['code'] ?></div>
                         <div class="serial"><?= $result2[$i]['cname'] ?></div>
                         <div class="serial"><?= $result2[$i]['id'] ?></div>
@@ -141,16 +142,22 @@ $result2 = $stmt2->fetchAll();
                         <div class="serial"><?= $result2[$i]['checkOut'] ?></div>
                         <?php
                         if ($result2[$i]['isEmpty'] == 1 && $result2[$i]['clean'] == 1) { ?>
-                            <form action='checkin.php' method='POST'>
-                                <button class="genric-btn info circle progress-bar" type='submit' name='checkin' id='checkin' value='<?= $result2[$i]['rnumber'] ?>'>가능</button>
-                            </form>
+                            <div class="serial">    
+                                <form action='checkin.php' method='POST'>
+                                    <button class="genric-btn info circle progress-bar" type='submit' name='checkin' id='checkin' value='<?= $result2[$i]['rnumber'] ?>'>가능</button>
+                                </form>
+                            </div>
                         <?php } else if ($result2[$i]['isEmpty'] == 0 && $result2[$i]['clean'] == 0){ ?>
-                            <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>완료</button>
+                            <div class="serial">
+                                <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>완료</button>
+                            </div>
                         <?php } else if ($result2[$i]['isEmpty'] == 1 && $result2[$i]['clean'] == 0) { ?>
-                            <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>불가</button>
+                            <div class="serial">
+                                <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>불가</button>
+                            </div>
                         <?php } ?>
-                    </div>
-                <?php } ?>
+                    <?php } ?>
+                </div>
             </div>
         </div>
     </div>

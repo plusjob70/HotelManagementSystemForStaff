@@ -11,7 +11,7 @@
         $department=$_POST['department'];
 
         if ($password !== $password2) {
-            print "<script language=javascript> alert('비밀번호가 일치하지 않습니다.'); location.replace('signUp.php'); </script>";
+            print "<script language=javascript> alert('You entered the wrong password.'); location.replace('signUp.php'); </script>";
             exit;
         }
 
@@ -28,7 +28,7 @@
         
         for($i = 0; $i < count($result); $i++){
             if($result[$i]["id"] == $id){
-                print "<script language=javascript> alert('해당 아이디는 이미 가입되어 있습니다.'); location.replace('signUp.php'); </script>";
+                print "<script language=javascript> alert('This ID has been taken.'); location.replace('signUp.php'); </script>";
                 exit;
             }
         }
@@ -37,7 +37,7 @@
                 VALUE ($q_id, $q_password, $q_name, $q_phone, $q_department, $q_attendance, 0)";
         $db->exec($str);
 
-        print "<script language=javascript> alert('관리자 승인 후 사용가능'); location.replace('staffMain.html'); </script>";
+        print "<script language=javascript> alert('Registration will be completed after admin approval.'); location.replace('staffMain.html'); </script>";
         exit;
 
     } catch (PDOException $ex) {

@@ -32,12 +32,12 @@ try {
                         break;
                 }
             } else {
-                print "<script language=javascript> alert('관리자 승인 필요.'); history.back(); </script>";
+                print "<script language=javascript> alert('Need admin approval.'); history.back(); </script>";
                 exit;
             }
         }
     }
-    print "<script language=javascript> alert('정보가 일치하지 않습니다.'); history.back(); </script>";
+    print "<script language=javascript> alert('Information does not match.'); history.back(); </script>";
     exit;
 } catch (PDOException $ex) {
 ?>

@@ -66,7 +66,7 @@
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="staffMain.html"> <img src="img/logo.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
@@ -125,8 +125,7 @@
                 <div class="input-group-icon mt-10">
                     <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
                     <div class="form-select" id="default-select"">
-                                <select name="department">
-                                    <option style="text-align:center;" value=" 1">dept</option>
+                        <select name="department">
                         <option value="roomkeeper">roomkeeper</option>
                         <option value="receptionist">receptionist</option>
                         <option value="manager">manager</option>

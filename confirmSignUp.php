@@ -19,10 +19,10 @@
 
     if ($code == 't'){
         accept();
-        print "<script language=javascript> alert('해당직원의 가입이 승인되었습니다.'); history.back(); </script>";
+        print "<script language=javascript> alert('Registration request has been accepted.'); history.back(); </script>";
     }else if ($code == 'f') {
         reject();
-        print "<script language=javascript> alert('해당직원의 가입이 거부되었습니다.'); history.back(); </script>";
+        print "<script language=javascript> alert('Registration request has benn declined.'); history.back(); </script>";
     }
     exit;
 ?>

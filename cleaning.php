@@ -13,6 +13,6 @@
     $db->exec($str);
     $db->exec($str2);
 
-    print "<script language=javascript> alert('청소배정이 완료되었습니다.'); history.back(); </script>";
+    print "<script language=javascript> alert('Staff has been located for cleaning.'); history.back(); </script>";
     exit;
 ?>

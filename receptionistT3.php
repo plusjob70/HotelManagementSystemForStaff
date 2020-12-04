@@ -127,6 +127,7 @@ $result3 = $stmt3->fetchAll();
                     <div class="serial">Cell</div>
                     <div class="serial">Check-in</div>
                     <div class="serial">Check-out</div>
+                    <div class="serial">Status</div>
                 </div>
                 <?php for ($i = 0; $i < count($result3); $i++) { ?>
                     <div class="table-row">
@@ -138,16 +139,18 @@ $result3 = $stmt3->fetchAll();
                         <div class="serial"><?= $result3[$i]['phone'] ?></div>
                         <div class="serial"><?= $result3[$i]['checkIn'] ?></div>
                         <div class="serial"><?= $result3[$i]['checkOut'] ?></div>
-                        <form action='checkout.php' method='POST'>
-                            <input type='hidden' name='code' value='<?= $result3[$i]["code"] ?>'></input>
-                            <input type='hidden' name='cname' value='<?= $result3[$i]["cname"] ?>'></input>
-                            <input type='hidden' name='id' value='<?= $result3[$i]["id"] ?>'></input>
-                            <input type='hidden' name='rnumber' value='<?= $result3[$i]["rnumber"] ?>'></input>
-                            <input type='hidden' name='phone' value='<?= $result3[$i]["phone"] ?>'></input>
-                            <input type='hidden' name='checkIn' value='<?= $result3[$i]["checkIn"] ?>'></input>
-                            <input type='hidden' name='checkOut' value='<?= $result3[$i]["checkOut"] ?>'></input>
-                            <button class="genric-btn info circle progress-bar" type='submit' value='checkout'>가능</button>
-                        </form>
+                        <div class="serial">
+                            <form action='checkout.php' method='POST'>
+                                <input type='hidden' name='code' value='<?= $result3[$i]["code"] ?>'></input>
+                                <input type='hidden' name='cname' value='<?= $result3[$i]["cname"] ?>'></input>
+                                <input type='hidden' name='id' value='<?= $result3[$i]["id"] ?>'></input>
+                                <input type='hidden' name='rnumber' value='<?= $result3[$i]["rnumber"] ?>'></input>
+                                <input type='hidden' name='phone' value='<?= $result3[$i]["phone"] ?>'></input>
+                                <input type='hidden' name='checkIn' value='<?= $result3[$i]["checkIn"] ?>'></input>
+                                <input type='hidden' name='checkOut' value='<?= $result3[$i]["checkOut"] ?>'></input>
+                                <button class="genric-btn info circle progress-bar" type='submit' value='checkout'>가능</button>
+                            </form>
+                        </div>
                     </div>
                 <?php } ?>
             </div>

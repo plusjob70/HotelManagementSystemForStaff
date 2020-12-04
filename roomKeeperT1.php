@@ -121,10 +121,12 @@ $result = $stmt->fetchAll();
                     <div class="table-row">
                         <div class="serial"><?= $result[$i]['ttime'] ?></div>
                         <div class="serial"><?= $result[$i]['rnumber'] ?></div>
-                        <form action='cleaningComplete.php' method='POST'>
-                            <input type='hidden' name='rnumber' value='<?= $result[$i]['rnumber'] ?>'></input>
-                            <button class="genric-btn info circle progress-bar" type='submit' name='complete' value='<?= $result[$i]['code'] ?>'>Complete</button>
-                        </form>
+                        <div class="serial">
+                            <form action='cleaningComplete.php' method='POST'>
+                                <input type='hidden' name='rnumber' value='<?= $result[$i]['rnumber'] ?>'></input>
+                                <button class="genric-btn info circle progress-bar" type='submit' name='complete' value='<?= $result[$i]['code'] ?>'>Complete</button>
+                            </form>
+                        </div>
                     </div>
                 <?php } ?>
             </div>
