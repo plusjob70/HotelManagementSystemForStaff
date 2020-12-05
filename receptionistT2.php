@@ -89,7 +89,7 @@ $result2 = $stmt2->fetchAll();
                                 </ul>
                             </div>
                             <!-- Start 출퇴근 기능 -->
-                            <p style="color:navy">Welcome, <?= $staff_name ?>  &nbsp;</p>
+                            <p style="color:navy">Welcome, <?= $staff_name ?> &nbsp;</p>
                             <?php
                             if ($result_s[0]['attendance'] == 1) { ?>
                                 <form action='staffAttendance.php' method='POST'>
@@ -129,9 +129,8 @@ $result2 = $stmt2->fetchAll();
                     <div class="serial">Check-out</div>
                     <div class="serial">Status</div>
                 </div>
-                <div class="table-row">
-                    <?php for ($i = 0; $i < count($result2); $i++) { ?>
-                    
+                <?php for ($i = 0; $i < count($result2); $i++) { ?>
+                    <div class="table-row">
                         <div class="serial"><?= $result2[$i]['code'] ?></div>
                         <div class="serial"><?= $result2[$i]['cname'] ?></div>
                         <div class="serial"><?= $result2[$i]['id'] ?></div>
@@ -142,22 +141,22 @@ $result2 = $stmt2->fetchAll();
                         <div class="serial"><?= $result2[$i]['checkOut'] ?></div>
                         <?php
                         if ($result2[$i]['isEmpty'] == 1 && $result2[$i]['clean'] == 1) { ?>
-                            <div class="serial">    
+                            <div class="serial">
                                 <form action='checkin.php' method='POST'>
                                     <button class="genric-btn info circle progress-bar" type='submit' name='checkin' id='checkin' value='<?= $result2[$i]['rnumber'] ?>'>가능</button>
                                 </form>
                             </div>
-                        <?php } else if ($result2[$i]['isEmpty'] == 0 && $result2[$i]['clean'] == 0){ ?>
+                        <?php } else if ($result2[$i]['isEmpty'] == 0 && $result2[$i]['clean'] == 0) { ?>
                             <div class="serial">
                                 <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>완료</button>
                             </div>
-                        <?php } else if ($result2[$i]['isEmpty'] == 1 && $result2[$i]['clean'] == 0) { ?>
+                        <?php } else if ($result2[$i]['isEmpty'] == 1 && $result2[$i]['clean'] == 0 || $result2[$i]['isEmpty'] == 0 && $result2[$i]['clean'] == 1) { ?>
                             <div class="serial">
                                 <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>불가</button>
                             </div>
                         <?php } ?>
                     <?php } ?>
-                </div>
+                    </div>
             </div>
         </div>
     </div>
