@@ -148,7 +148,7 @@ $result3 = $stmt3->fetchAll();
                                 <input type='hidden' name='phone' value='<?= $result3[$i]["phone"] ?>'></input>
                                 <input type='hidden' name='checkIn' value='<?= $result3[$i]["checkIn"] ?>'></input>
                                 <input type='hidden' name='checkOut' value='<?= $result3[$i]["checkOut"] ?>'></input>
-                                <button class="genric-btn info circle progress-bar" type='submit' value='checkout'>가능</button>
+                                <button class="genric-btn info circle progress-bar" type='submit' value='checkout'>Able</button>
                             </form>
                         </div>
                     </div>

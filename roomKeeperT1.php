@@ -108,19 +108,19 @@ $result = $stmt->fetchAll();
 
 
     <!-- Start 할당된 청소 현황 -->
-    <div style='margin-right:90px; margin-left:90px;' class="section-top-border">
+    <div style='margin-right:400px; margin-left:90px;' class="section-top-border">
         <h3 class="mb-30">Clean-Duty</h3>
         <div class="progress-table-wrap">
             <div class="progress-table">
                 <div class="table-head">
-                    <div class="serial">Time</div>
-                    <div class="serial">Room No.</div>
+                    <div style="width:20%" class="serial">Time</div>
+                    <div style="width:20%" class="serial">Room No.</div>
                     <div class="serial">Status</div>
                 </div>
                 <?php for ($i = 0; $i < count($result); $i++) { ?>
                     <div class="table-row">
-                        <div class="serial"><?= $result[$i]['ttime'] ?></div>
-                        <div class="serial"><?= $result[$i]['rnumber'] ?></div>
+                        <div style="width:20%" class="serial"><?= $result[$i]['ttime'] ?></div>
+                        <div style="width:20%" class="serial"><?= $result[$i]['rnumber'] ?></div>
                         <div class="serial">
                             <form action='cleaningComplete.php' method='POST'>
                                 <input type='hidden' name='rnumber' value='<?= $result[$i]['rnumber'] ?>'></input>
