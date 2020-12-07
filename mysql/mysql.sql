@@ -3,10 +3,12 @@ DROP TABLE customer_log;
 DROP TABLE cleaning;
 DROP TABLE task_log;
 DROP TABLE reservation;
+DROP TABLE reservation_log;
 DROP TABLE staff;
 DROP TABLE customer;
 DROP TABLE room;
 DROP TABLE room_type;
+
 
 CREATE TABLE complainment (
 	code		INTEGER 		AUTO_INCREMENT,
@@ -94,56 +96,65 @@ CREATE TABLE reservation (
 	FOREIGN KEY(id) REFERENCES customer(id),
 	FOREIGN KEY(rnumber) REFERENCES room(rnumber)
 );
+ALTER TABLE reservation AUTO_INCREMENT=1031;
+
+CREATE TABLE reservation_log (
+	rnumber 	INTEGER,
+	use_date 	DATE,
+	code 		INTEGER,
+	PRIMARY KEY(rnumber, use_date)
+);
+
 
 INSERT INTO staff VALUES ('admin', 'admin', '관리자', '01036464406', 'master', 0, 1);
 
-INSERT INTO room_type VALUES ('STANDARD', 100000, 2, 1, 'CITY', 0);
-INSERT INTO room_type VALUES ('DELUX', 200000, 2, 1, 'OCEAN', 1);
-INSERT INTO room_type VALUES ('FAMILY', 400000, 4, 3, 'CITY', 2);
+INSERT INTO room_type VALUES ('STANDARD', 120000, 2, 1, 'CITY', 0);
+INSERT INTO room_type VALUES ('DELUX', 180000, 2, 1, 'OCEAN', 1);
+INSERT INTO room_type VALUES ('FAMILY', 270000, 4, 3, 'CITY', 2);
 
 INSERT INTO room VALUES (201, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (202, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (203, 'STANDARD', 1, 1);
-INSERT INTO room VALUES (204, 'STANDARD', 1, 1);
+INSERT INTO room VALUES (204, 'STANDARD', 1, 0);
 INSERT INTO room VALUES (205, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (206, 'FAMILY', 1, 1);
-INSERT INTO room VALUES (207, 'STANDARD', 1, 1);
+INSERT INTO room VALUES (207, 'STANDARD', 1, 0);
 INSERT INTO room VALUES (208, 'STANDARD', 1, 1);
-INSERT INTO room VALUES (301, 'FAMILY', 1, 1);
+INSERT INTO room VALUES (301, 'FAMILY', 1, 0);
 INSERT INTO room VALUES (302, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (303, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (304, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (305, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (306, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (307, 'STANDARD', 1, 1);
-INSERT INTO room VALUES (308, 'STANDARD', 1, 1);
+INSERT INTO room VALUES (308, 'STANDARD', 1, 0);
 INSERT INTO room VALUES (401, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (402, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (403, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (404, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (405, 'FAMILY', 1, 1);
-INSERT INTO room VALUES (406, 'FAMILY', 1, 1);
+INSERT INTO room VALUES (406, 'FAMILY', 1, 0);
 INSERT INTO room VALUES (407, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (408, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (501, 'FAMILY', 1, 1);
-INSERT INTO room VALUES (502, 'FAMILY', 1, 1);
+INSERT INTO room VALUES (502, 'FAMILY', 1, 0);
 INSERT INTO room VALUES (503, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (504, 'STANDARD', 1, 1);
-INSERT INTO room VALUES (505, 'FAMILY', 1, 1);
+INSERT INTO room VALUES (505, 'FAMILY', 1, 0);
 INSERT INTO room VALUES (506, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (507, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (508, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (601, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (602, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (603, 'STANDARD', 1, 1);
-INSERT INTO room VALUES (604, 'STANDARD', 1, 1);
-INSERT INTO room VALUES (605, 'FAMILY', 1, 1);
+INSERT INTO room VALUES (604, 'STANDARD', 1, 0);
+INSERT INTO room VALUES (605, 'FAMILY', 1, 0);
 INSERT INTO room VALUES (606, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (607, 'STANDARD', 1, 1);
-INSERT INTO room VALUES (608, 'STANDARD', 1, 1);
-INSERT INTO room VALUES (701, 'DELUX', 1, 1);
-INSERT INTO room VALUES (702, 'DELUX', 1, 1);
-INSERT INTO room VALUES (703, 'DELUX', 1, 1);
+INSERT INTO room VALUES (608, 'STANDARD', 1, 0);
+INSERT INTO room VALUES (701, 'DELUX', 1, 0);
+INSERT INTO room VALUES (702, 'DELUX', 1, 0);
+INSERT INTO room VALUES (703, 'DELUX', 1, 0);
 INSERT INTO room VALUES (704, 'DELUX', 1, 1);
 INSERT INTO room VALUES (705, 'DELUX', 1, 1);
 INSERT INTO room VALUES (706, 'DELUX', 1, 1);
@@ -155,17 +166,8 @@ INSERT INTO room VALUES (803, 'DELUX', 1, 1);
 INSERT INTO room VALUES (804, 'DELUX', 1, 1);
 INSERT INTO room VALUES (805, 'DELUX', 1, 1);
 INSERT INTO room VALUES (806, 'DELUX', 1, 1);
-INSERT INTO room VALUES (807, 'DELUX', 1, 1);
+INSERT INTO room VALUES (807, 'DELUX', 1, 0);
 INSERT INTO room VALUES (808, 'DELUX', 1, 1);
-
-
-INSERT INTO customer VALUES ('c1', '1234', '손님1', '01022223333');
-INSERT INTO customer VALUES ('c2', '1234', '손님2', '01033331111');
-INSERT INTO customer VALUES ('c3', '1234', '손님3', '01031231111');
-INSERT INTO customer VALUES ('c4', '1234', '손님4', '01033356111');
-INSERT INTO customer VALUES ('c5', '1234', '손님5', '01033331113');
-INSERT INTO customer VALUES ('c6', '1234', '손님6', '01031331111');
-
 
 INSERT INTO staff VALUES ('m1', '12345', '이준호', '01000000000', 'manager', 1, 1);
 INSERT INTO staff VALUES ('r1', '12345', '최준호', '01011111111', 'receptionist', 1, 1);
@@ -185,6 +187,29 @@ INSERT INTO staff VALUES ('k8', '12345', '박승현', '01155555555', 'roomkeeper
 INSERT INTO staff VALUES ('k9', '12345', '박준호', '01166666666', 'roomkeeper', 0, 0);
 INSERT INTO staff VALUES ('k10', '12345', '최아린', '01177777777', 'roomkeeper', 0, 0);
 
+INSERT INTO customer VALUES ('crh', '1234', '최라희', '01212345678');
+INSERT INTO customer VALUES ('gmg', '1234', '고민건', '01812345678');
+INSERT INTO customer VALUES ('kju', '1234', '김재욱', '01187654321');
+INSERT INTO customer VALUES ('hsh', '1234', '한시훈', '01512345678');
+INSERT INTO customer VALUES ('luj', '1234', '이은지', '01312345678');
+INSERT INTO customer VALUES ('swj', '1234', '손원준', '01287654321');
+INSERT INTO customer VALUES ('psc', '1234', '박승찬', '02112345678');
+INSERT INTO customer VALUES ('jsb', '1234', '전승빈', '02812345678');
+INSERT INTO customer VALUES ('kaj', '1234', '김아진', '02212345678');
+INSERT INTO customer VALUES ('kmk', '1234', '김민기', '01612345678');
+
+INSERT INTO reservation (id, rnumber, num_guests, checkIn, checkOut) VALUES ('gmg', 202, 5, '2020-12-06', '2020-12-08');
+INSERT INTO reservation (id, rnumber, num_guests, checkIn, checkOut) VALUES ('gmg', 203, 2, '2020-12-07', '2020-12-08');
+INSERT INTO reservation (id, rnumber, num_guests, checkIn, checkOut) VALUES ('kju', 305, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation (id, rnumber, num_guests, checkIn, checkOut) VALUES ('hsh', 306, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation (id, rnumber, num_guests, checkIn, checkOut) VALUES ('luj', 506, 4, '2020-12-08', '2020-12-09');
+INSERT INTO reservation (id, rnumber, num_guests, checkIn, checkOut) VALUES ('luj', 507, 2, '2020-12-08', '2020-12-09');
+INSERT INTO reservation (id, rnumber, num_guests, checkIn, checkOut) VALUES ('swj', 301, 5, '2020-12-08', '2020-12-10');
+INSERT INTO reservation (id, rnumber, num_guests, checkIn, checkOut) VALUES ('psc', 302, 4, '2020-12-08', '2020-12-10');
+INSERT INTO reservation (id, rnumber, num_guests, checkIn, checkOut) VALUES ('jsb', 704, 2, '2020-12-09', '2020-12-10');
+INSERT INTO reservation (id, rnumber, num_guests, checkIn, checkOut) VALUES ('jsb', 705, 4, '2020-12-09', '2020-12-10');
+INSERT INTO reservation (id, rnumber, num_guests, checkIn, checkOut) VALUES ('kaj', 501, 4, '2020-12-09', '2020-12-11');
+INSERT INTO reservation (id, rnumber, num_guests, checkIn, checkOut) VALUES ('kmk', 508, 3, '2020-12-09', '2020-12-12');
 
 INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(69, 'ljo', '이지오', 403, '01012345678', '2020-11-05', '2020-11-07');
 INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(70, 'kgo', '김가온', 701, '01112345678', '2020-11-05', '2020-11-06');

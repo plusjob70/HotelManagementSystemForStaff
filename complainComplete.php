@@ -10,12 +10,12 @@
     $q_staff_id = $db->quote($staff_id);
 
     $str = "INSERT INTO task_log (ttime, rnumber, staff_id, tstatus)
-            VALUE (NOW()," .$q_rnumber. "," .$q_staff_id. ", 'COMPLAIN')";
+            VALUE (NOW()," .$q_rnumber. "," .$q_staff_id. ", 'COMPLAIN.ACT.')";
     $str2 = "DELETE FROM complainment WHERE code =" .$q_code;
 
     $db->exec($str);
     $db->exec($str2);
 
-    print "<script language=javascript> alert('불만사항이 해결되었습니다.'); history.back(); </script>";
+    print "<script language=javascript> alert('Complainment is resolved!.'); history.back(); </script>";
     exit;
 ?>

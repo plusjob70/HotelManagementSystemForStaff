@@ -118,11 +118,11 @@ include 'basic.php';
                 <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
                 <div class="form-select" id="default-select" "="">
 					<select name="complainment">
-                    <option value="고장">Repair</option>
-                    <option value="위생">Sanitation</option>
-                    <option value="소음">Noise</option>
-                    <option value="서비스">Service</option>
-                    <option value="기타">Others</option>
+                    <option value="Repair">Repair</option>
+                    <option value="Sanitation">Sanitation</option>
+                    <option value="Noise">Noise</option>
+                    <option value="Service">Service</option>
+                    <option value="Others">Others</option>
                     </select>
                 </div>
             </div>

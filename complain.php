@@ -12,7 +12,11 @@
     
         $str = "INSERT INTO complainment (ttime, rnumber, staff_id, complainment, detail, recept)
                  VALUE (NOW()," .$q_rnumber. "," .$q_staff_id. "," .$q_complainment. "," .$q_detail. ", 0)";
+        $str2 = "INSERT INTO task_log (ttime, rnumber, staff_id, tstatus)
+                VALUE (NOW()," .$q_rnumber. "," .$q_staff_id. ", 'COMPLAIN.REC.')";
+
         $db->exec($str);
+        $db->exec($str2);
     
         print "<script language=javascript> alert('Request has been registered.'); location.replace('receptionistT4.php'); </script>";
         exit;

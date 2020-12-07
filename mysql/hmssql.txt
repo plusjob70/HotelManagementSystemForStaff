@@ -130,23 +130,23 @@ INSERT INTO room VALUES (307, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (308, 'STANDARD', 1, 0);
 INSERT INTO room VALUES (401, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (402, 'FAMILY', 1, 1);
-INSERT INTO room VALUES (403, 'STANDARD', 1, 1);
+INSERT INTO room VALUES (403, 'STANDARD', 0, 1);
 INSERT INTO room VALUES (404, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (405, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (406, 'FAMILY', 1, 0);
 INSERT INTO room VALUES (407, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (408, 'STANDARD', 1, 1);
-INSERT INTO room VALUES (501, 'FAMILY', 1, 1);
+INSERT INTO room VALUES (501, 'FAMILY', 0, 1);
 INSERT INTO room VALUES (502, 'FAMILY', 1, 0);
 INSERT INTO room VALUES (503, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (504, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (505, 'FAMILY', 1, 0);
 INSERT INTO room VALUES (506, 'FAMILY', 1, 1);
-INSERT INTO room VALUES (507, 'STANDARD', 1, 1);
+INSERT INTO room VALUES (507, 'STANDARD', 0, 1);
 INSERT INTO room VALUES (508, 'STANDARD', 1, 1);
 INSERT INTO room VALUES (601, 'FAMILY', 1, 1);
 INSERT INTO room VALUES (602, 'FAMILY', 1, 1);
-INSERT INTO room VALUES (603, 'STANDARD', 1, 1);
+INSERT INTO room VALUES (603, 'STANDARD', 0, 1);
 INSERT INTO room VALUES (604, 'STANDARD', 1, 0);
 INSERT INTO room VALUES (605, 'FAMILY', 1, 0);
 INSERT INTO room VALUES (606, 'FAMILY', 1, 1);
@@ -164,7 +164,7 @@ INSERT INTO room VALUES (801, 'DELUX', 1, 1);
 INSERT INTO room VALUES (802, 'DELUX', 1, 1);
 INSERT INTO room VALUES (803, 'DELUX', 1, 1);
 INSERT INTO room VALUES (804, 'DELUX', 1, 1);
-INSERT INTO room VALUES (805, 'DELUX', 1, 1);
+INSERT INTO room VALUES (805, 'DELUX', 0, 1);
 INSERT INTO room VALUES (806, 'DELUX', 1, 1);
 INSERT INTO room VALUES (807, 'DELUX', 1, 0);
 INSERT INTO room VALUES (808, 'DELUX', 1, 1);
@@ -249,3 +249,34 @@ INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VA
 INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(104, 'ghj', '고현지', 402, '02087654321', '2020-12-03', '2020-12-05');
 INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(105, 'csh', '최소현', 407, '02087654321', '2020-12-04', '2020-12-06');
 INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(106, 'hmj', '한민정', 501, '02087654321', '2020-12-05', '2020-12-06');
+
+
+INSERT INTO complainment (ttime, rnumber, staff_id, complainment, detail, recept) VALUE('2020-12-08 10:55:01', 505, 'r1', 'Repair', '티비에 전원이 들어오지 않음', 0);
+INSERT INTO complainment (ttime, rnumber, staff_id, complainment, detail, recept) VALUE('2020-12-08 10:56:02', 601, 'r1', 'Service', '수건이 부족함', 0);
+INSERT INTO complainment (ttime, rnumber, staff_id, complainment, detail, recept) VALUE('2020-12-08 11:12:02', 202, 'r1', 'Sanitation', '화장실이 깨끗하지 않음', 0);
+INSERT INTO complainment (ttime, rnumber, staff_id, complainment, detail, recept) VALUE('2020-12-08 11:12:02', 404, 'k1', 'Service', '어메니티가 부족함', 1);
+INSERT INTO complainment (ttime, rnumber, staff_id, complainment, detail, recept) VALUE('2020-12-08 11:12:02', 704, 'k1', 'Sanitation', '화장실이 깨끗하지 않음', 1);
+
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-06 13:12:32', 203, 'r1', 'CHECKIN');
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-06 13:13:27', 207, 'r3', 'CHECKIN');
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-06 13:20:40', 303, 'r2', 'CHECKOUT');
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-06 13:24:32', 403, 'r1', 'COMPLAIN.REC.');
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-06 14:11:12', 503, 'r4', 'CHECKOUT');
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-06 15:12:15', 807, 'r1', 'COMPLAIN.REC.');
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-06 16:12:13', 203, 'r4', 'CHECKOUT');
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-06 16:12:43', 307, 'k3', 'CLEANING');
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-06 16:12:44', 403, 'k1', 'COMPLAIN.ACT.');
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-06 16:15:13', 303, 'r4', 'CHECKIN');
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-06 16:15:43', 807, 'k2', 'COMPLAIN.ACT.');
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-07 16:16:15', 707, 'r3', 'CHECKIN');
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-07 17:12:35', 808, 'r3', 'CHECKOUT');
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-07 17:13:22', 406, 'r1', 'CHECKOUT');
+INSERT INTO task_log (ttime, rnumber, staff_id, tstatus) VALUE('2020-12-07 18:12:00', 401, 'r2', 'CHECKIN');
+
+INSERT INTO cleaning (ttime, rnumber, staff_id) VALUE('2020-12-08 12:12:04', 805, 'k1');
+INSERT INTO cleaning (ttime, rnumber, staff_id) VALUE('2020-12-08 12:15:05', 507, 'k1');
+INSERT INTO cleaning (ttime, rnumber, staff_id) VALUE('2020-12-08 12:16:12', 403, 'k1');
+INSERT INTO cleaning (ttime, rnumber, staff_id) VALUE('2020-12-08 12:18:56', 603, 'k1');
+INSERT INTO cleaning (ttime, rnumber, staff_id) VALUE('2020-12-08 12:50:13', 501, 'k1');
+
+
