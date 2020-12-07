@@ -149,6 +149,8 @@ $result2 = $stmt2->fetchAll();
                                 <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>Done</button>
                             <?php } else if ($result2[$i]['isEmpty'] == 1 && $result2[$i]['clean'] == 0) { ?>
                                 <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>Unable</button>
+                            <?php } else { ?>
+                                <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>Unable</button>
                             <?php } ?>
                         </div>
                     </div>
