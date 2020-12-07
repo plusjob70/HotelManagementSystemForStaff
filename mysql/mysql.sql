@@ -8,7 +8,6 @@ DROP TABLE customer;
 DROP TABLE room;
 DROP TABLE room_type;
 
-
 CREATE TABLE complainment (
 	code		INTEGER 		AUTO_INCREMENT,
 	ttime		DATETIME	NOT NULL,
