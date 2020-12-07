@@ -148,6 +148,7 @@ INSERT INTO room VALUES (806, 'DELUX', 1, 1);
 INSERT INTO room VALUES (807, 'DELUX', 1, 1);
 INSERT INTO room VALUES (808, 'DELUX', 1, 1);
 
+
 INSERT INTO customer VALUES ('c1', '1234', '손님1', '01022223333');
 INSERT INTO customer VALUES ('c2', '1234', '손님2', '01033331111');
 INSERT INTO customer VALUES ('c3', '1234', '손님3', '01031231111');
@@ -155,6 +156,86 @@ INSERT INTO customer VALUES ('c4', '1234', '손님4', '01033356111');
 INSERT INTO customer VALUES ('c5', '1234', '손님5', '01033331113');
 INSERT INTO customer VALUES ('c6', '1234', '손님6', '01031331111');
 
+
+INSERT INTO staff VALUES ('m1', '12345', '이준호', '01000000000', 'manager', '1', '1')
+INSERT INTO staff VALUES ('r1', '12345', '최준호', '01011111111', 'receptionist', '1', '1')
+INSERT INTO staff VALUES ('r2', '12345', '김서준', '01022222222', 'receptionist', '1', '1')
+INSERT INTO staff VALUES ('r3', '12345', '최시우', '01033333333', 'receptionist', '1', '1')
+INSERT INTO staff VALUES ('r4', '12345', '서연', '01044444444', 'receptionist', '1', '1')
+INSERT INTO staff VALUES ('r5', '12345', '이민서', '01055555555', 'receptionist', '1', '1')
+INSERT INTO staff VALUES ('r6', '12345', '김수아', '01066666666', 'receptionist', '1', '1')
+INSERT INTO staff VALUES ('k1', '12345', '김준호', '01077777777', 'roomkeeper', '1', '1')
+INSERT INTO staff VALUES ('k2', '12345', '이지호', '01088888888', 'roomkeeper', '1', '1')
+INSERT INTO staff VALUES ('k3', '12345', '최주원', '01099999999', 'roomkeeper', '1', '1')
+INSERT INTO staff VALUES ('k4', '12345', '고현준', '01111111111', 'roomkeeper', '1', '1')
+INSERT INTO staff VALUES ('k5', '12345', '문기범', '01122222222', 'roomkeeper', '1', '1')
+INSERT INTO staff VALUES ('k6', '12345', '이재현', '01133333333', 'roomkeeper', '1', '1')
+INSERT INTO staff VALUES ('k7', '12345', '한지원', '01144444444', 'roomkeeper', '1', '1')
+INSERT INTO staff VALUES ('k8', '12345', '박승현', '01155555555', 'roomkeeper', '1', '1')
+INSERT INTO staff VALUES ('k9', '12345', '박준호', '01166666666', 'roomkeeper', '0', '0')
+INSERT INTO staff VALUES ('k10', '12345', '최아린', '01177777777', 'roomkeeper', '0', '0')
+
+
 INSERT INTO reservation VALUES (1111231, 'c2', 401, 2, '2020-12-07', '2020-12-10');
 INSERT INTO reservation VALUES (1111115, 'c2', 202, 1, '2020-12-07', '2020-12-08');
 INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+INSERT INTO reservation VALUES (1111113, 'c3', 602, 4, '2020-12-07', '2020-12-08');
+
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(코드, '아이디', '이지오', 403, '01012345678', 2, '2020-11-05', '2020-11-07')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(코드, '아이디', '김가온', 701, '01112345678', 1, '2020-11-05', '2020-11-06')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(71, 'crh', '최라희', 702, '01212345678', 2, '2020-11-06', '2020-11-08')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(72, 'luj', '이은지', 703, '01312345678', 2, '2020-11-06', '2020-11-07')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(73, 'png', '박나경', 804, '01412345678', 1, '2020-11-06', '2020-11-09')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(74, 'hsh', '한시훈', 805, '01512345678', 2, '2020-11-07', '2020-11-08')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(75, 'kmk', '김민기', 806, '01612345678', 2, '2020-11-07', '2020-11-08')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(76, 'phm', '박현민', 504, '01712345678', 2, '2020-11-07', '2020-11-09')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(77, 'gmg', '고민건', 503, '01812345678', 2, '2020-11-08', '2020-11-09')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(78, 'kty', '김태영', 505, '01912345678', 2, '2020-11-08', '2020-11-09')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(79, 'shj', '서현준', 601, '01087654321', 1, '2020-11-09', '2020-11-10')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(80, 'kju', '김재욱', 603, '01187654321', 2, '2020-11-10', '2020-11-11')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(81, 'swj', '손원준', 607, '01287654321', 4, '2020-11-11', '2020-11-12')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(82, 'ldh', '이다희', 503, '01387654321', 2, '2020-11-12', '2020-11-14')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(83, 'sjw', '송정원', 403, '01487654321', 2, '2020-11-13', '2020-11-14')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(84, 'kdh', '김다혜', 503, '01587654321', 2, '2020-11-14', '2020-11-15')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(85, 'lsy', '이승연', 803, '01687654321', 2, '2020-11-15', '2020-11-16')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(86, 'kjh', '김지현', 804, '01787654321', 1, '2020-11-15', '2020-11-16')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(87, 'njy', '나지영', 805, '01887654321', 2, '2020-11-16', '2020-11-17')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(88, 'lgy', '이고은', 806, '01987654321', 1, '2020-11-16', '2020-11-18')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(89, 'cng', '최나경', 807, '02087654321', 1, '2020-11-17', '2020-11-19')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(90, 'gjh', '고지혁', 501, '02012345678', 2, '2020-11-18', '2020-11-19')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(91, 'psc', '박승찬', 403, '02112345678', 4, '2020-11-19', '2020-11-20')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(92, 'kaj', '김아진', 404, '02212345678', 2, '2020-11-20', '2020-11-21')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(93, 'psj', '박소정', 301, '02312345678', 4, '2020-11-21', '2020-11-22')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(94, 'pyc', '박윤찬', 302, '02412345678', 2, '2020-11-22', '2020-11-24')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(95, 'ksj', '김세준', 303, '02512345678', 3, '2020-11-22', '2020-11-24')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(96, 'lth', '이태현', 307, '02612345678', 2, '2020-11-23', '2020-11-24')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(97, 'pdg', '박동건', 207, '02712345678', 3, '2020-11-24', '2020-11-25')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(98, 'jsb', '전승빈', 206, '02812345678', 2, '2020-11-25', '2020-11-26')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(99, 'lsh', '이소희', 205, '02912345678', 1, '2020-11-26', '2020-11-27')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(100, 'jcy', '정채연', 501, '02087654321', 2, '2020-12-01', '2020-12-02')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(101, 'ljh', '이주호', 507, '02087654321', 1, '2020-12-01', '2020-12-02')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(102, 'kdo', '김다온', 503, '02087654321', 2, '2020-12-02', '2020-12-04')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(103, 'chl', '최하랑', 208, '02087654321', 1, '2020-12-02', '2020-12-04')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(104, 'ghj', '고현지', 402, '02087654321', 2, '2020-12-03', '2020-12-05')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(105, 'csh', '최소현', 407, '02087654321', 1, '2020-12-04', '2020-12-06')
+INSERT INTO customer_log (code, id, cname, rnumber, phone, checkIn, checkOut) VALUE(106, 'hmj', '한민정', 501, '02087654321', 2, '2020-12-05', '2020-12-06')
