@@ -143,10 +143,10 @@ $result2 = $stmt2->fetchAll();
                             <?php
                             if ($result2[$i]['isEmpty'] == 1 && $result2[$i]['clean'] == 1) { ?>
                                 <form action='checkin.php' method='POST'>
-                                    <button class="genric-btn info circle progress-bar" type='submit' name='checkin' id='checkin' value='<?= $result2[$i]['rnumber'] ?>'>Able</button>
+                                    <button class="genric-btn info circle progress-bar" type='submit' name='checkin' id='checkin' value='<?= $result2[$i]['rnumber'] ?>'>&nbsp;Able&nbsp;&nbsp;</button>
                                 </form>
                             <?php } else if ($result2[$i]['isEmpty'] == 0 && $result2[$i]['clean'] == 0){ ?>
-                                <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>Done</button>
+                                <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>&nbsp;Done&nbsp;</button>
                             <?php } else if ($result2[$i]['isEmpty'] == 1 && $result2[$i]['clean'] == 0) { ?>
                                 <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>Unable</button>
                             <?php } else { ?>

@@ -149,7 +149,7 @@ $result3_2 = $stmt3_2->fetchAll();
                 <div class="form-select" id="default-select" "="">
                 <select id='staff_list'>
                     <?php for ($i = 0; $i < count($result3); $i++) { ?>
-                    <option value='<?= $result3[$i]['id'] ?>'> <?= $result3[$i]['id'] ?> </option>
+                    <option value='<?= $result3[$i]['id'] ?>'> <?= $result3[$i]['id'] ?> <?= $result3[$i]['sname'] ?></option>
                     <?php } ?>
                 </select>
                 </div>
