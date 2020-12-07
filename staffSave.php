@@ -1,6 +1,6 @@
 <?php
     try {
-        $db = new PDO("mysql:dbname=HMS; host=localhost; port=3306", "root", "a12345");
+        $db = new PDO("mysql:dbname=hotel; host=localhost; port=3306", "root", "root");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $id=$_POST['id'];
