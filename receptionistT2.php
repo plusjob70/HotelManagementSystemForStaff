@@ -119,19 +119,18 @@ $result2 = $stmt2->fetchAll();
         <div class="progress-table-wrap">
             <div class="progress-table">
                 <div class="table-head">
-                    <div class="serial">Res. No.</div>
+                    <div class="serial">Code</div>
                     <div class="serial">Name</div>
                     <div class="serial">ID</div>
-                    <div class="serial">Room No.</div>
-                    <div class="serial">Persons</div>
-                    <div class="serial">Cell</div>
+                    <div class="serial">Room no.</div>
+                    <div class="serial">persons</div>
+                    <div class="serial">cell</div>
                     <div class="serial">Check-in</div>
                     <div class="serial">Check-out</div>
-                    <div class="serial">Status</div>
+                    <div class="serial">status</div>
                 </div>
-                <div class="table-row">
-                    <?php for ($i = 0; $i < count($result2); $i++) { ?>
-                    
+                <?php for ($i = 0; $i < count($result2); $i++) { ?>
+                    <div class="table-row">
                         <div class="serial"><?= $result2[$i]['code'] ?></div>
                         <div class="serial"><?= $result2[$i]['cname'] ?></div>
                         <div class="serial"><?= $result2[$i]['id'] ?></div>
@@ -142,21 +141,18 @@ $result2 = $stmt2->fetchAll();
                         <div class="serial"><?= $result2[$i]['checkOut'] ?></div>
                         <div class="serial">
                             <?php
-                            if ($result2[$i]['isEmpty'] == 1 && $result2[$i]['clean'] == 1) { ?>   
-                                    <form action='checkin.php' method='POST'>
-                                        <button class="genric-btn info circle progress-bar" type='submit' name='checkin' id='checkin' value='<?= $result2[$i]['rnumber'] ?>'>Able</button>
-                                    </form>
-
-                            <?php } 
-                            else if ($result2[$i]['isEmpty'] == 0 && $result2[$i]['clean'] == 0){ ?>
-                                    <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>Done</button>
-                            <?php } 
-                            else if ($result2[$i]['isEmpty'] == 1 && $result2[$i]['clean'] == 0) { ?>
-                                    <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>Unable</button>
+                            if ($result2[$i]['isEmpty'] == 1 && $result2[$i]['clean'] == 1) { ?>
+                                <form action='checkin.php' method='POST'>
+                                    <button class="genric-btn info circle progress-bar" type='submit' name='checkin' id='checkin' value='<?= $result2[$i]['rnumber'] ?>'>Able</button>
+                                </form>
+                            <?php } else if ($result2[$i]['isEmpty'] == 0 && $result2[$i]['clean'] == 0){ ?>
+                                <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>Done</button>
+                            <?php } else if ($result2[$i]['isEmpty'] == 1 && $result2[$i]['clean'] == 0) { ?>
+                                <button class="genric-btn info-border circle progress-bar" type='submit' name='checkin' id='checkin' disabled>Unable</button>
                             <?php } ?>
                         </div>
-                    <?php } ?>
-                </div>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </div>
