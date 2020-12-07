@@ -2,4 +2,4 @@
     session_start();
     session_destroy();
 ?>
-<meta http-equiv="refresh" content="0;url=staffMain.html" />
+<meta http-equiv="refresh" content="0;url=staffMain.php" />

@@ -37,7 +37,7 @@
                 VALUE ($q_id, $q_password, $q_name, $q_phone, $q_department, $q_attendance, 0)";
         $db->exec($str);
 
-        print "<script language=javascript> alert('Registration will be completed after admin approval.'); location.replace('staffMain.html'); </script>";
+        print "<script language=javascript> alert('Registration will be completed after admin approval.'); location.replace('staffMain.php'); </script>";
         exit;
 
     } catch (PDOException $ex) {
