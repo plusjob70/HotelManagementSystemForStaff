@@ -117,7 +117,7 @@ $result2 = $stmt2->fetchAll();
                     <div class="serial">Room No.</div>
                     <div class="serial">Type</div>
                     <div class="percentage">Details</div>
-                    <div class="serial">Actions Taken</div>
+                    <div class="serial">Actions</div>
                 </div>
                 <?php for ($i = 0; $i < count($result2); $i++) { ?>
                     <div class="table-row">
